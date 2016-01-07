@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+
+  <div ng-hide="main.home" ng-repeat="row in main.grid" class="row">
+    <div class="col-xs-1"></div>
+    <div ng-repeat="card in row" class="col-xs-2">
+      <div class="card-container">
+        <div ng-if="card.color!==undefined" class="card" ng-class="{flipped: card.flipped}" ng-click="main.flip(card)">
+          <div class="front" style="background-color:{{card.color}}"></div>        
+          <div class="back text-center">
+            <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-1"></div>
+  </div>
+
+  <div ng-show="main.home" class="jumbotron text-center">
+    <h1>Welcome to
+      <span class="label label-primary">C</span><span class="label label-success">O</span><span class="label label-danger">L</span><span class="label label-warning">O</span><span class="label label-default">R</span><span class="label label-info">S</span>
+    </h1>
+    <h2>A funny memory colored game, enjoy :)</h2>
+  </div>
+
+</div>

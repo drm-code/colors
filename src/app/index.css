@@ -1,0 +1,62 @@
+.card-container {
+	height: 120px;
+	margin-bottom: 30px;
+	-webkit-perspective: 300px;
+	   -moz-perspective: 300px;
+	    -ms-perspective: 300px;
+	     -o-perspective: 300px;
+	        perspective: 300px;
+}
+.card,
+.card .front,
+.card .back {
+	height: 100%;
+	width: 100%;
+}
+.card {
+	position: relative;	
+	-webkit-transition: 1s;
+	   -moz-transition: 1s;
+	    -ms-transition: 1s;
+	     -o-transition: 1s;
+	        transition: 1s;
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	    -ms-transform-style: preserve-3d;
+	     -o-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+}
+.card.flipped,
+.card .front {
+	-webkit-transform: rotateY(180deg);
+	   -moz-transform: rotateY(180deg);
+	    -ms-transform: rotateY(180deg);
+	     -o-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
+}
+.card .front,
+.card .back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	    -ms-backface-visibility: hidden;
+	     -o-backface-visibility: hidden;
+	        backface-visibility: hidden;
+}
+.card .back {
+	padding-top: 15px;
+	background-color: #CFD8DC;
+	border: 10px double #787878;
+	z-index: 2;
+	-webkit-transform: rotateY(0deg);
+	   -moz-transform: rotateY(0deg);
+	    -ms-transform: rotateY(0deg);
+	     -o-transform: rotateY(0deg);
+	        transform: rotateY(0deg);
+}
+.glyphicon-star-empty {
+	color: #787878;
+	font-size: 65px;
+}
