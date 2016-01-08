@@ -28,11 +28,11 @@
 }
 .card.flipped,
 .card .front {
-	-webkit-transform: rotateY(180deg);
-	   -moz-transform: rotateY(180deg);
-	    -ms-transform: rotateY(180deg);
-	     -o-transform: rotateY(180deg);
-	        transform: rotateY(180deg);
+	-webkit-transform: rotateX(180deg);
+	   -moz-transform: rotateX(180deg);
+	    -ms-transform: rotateX(180deg);
+	     -o-transform: rotateX(180deg);
+	        transform: rotateX(180deg);
 }
 .card .front,
 .card .back {
@@ -50,11 +50,11 @@
 	background-color: #CFD8DC;
 	border: 10px double #787878;
 	z-index: 2;
-	-webkit-transform: rotateY(0deg);
-	   -moz-transform: rotateY(0deg);
-	    -ms-transform: rotateY(0deg);
-	     -o-transform: rotateY(0deg);
-	        transform: rotateY(0deg);
+	-webkit-transform: rotateX(0deg);
+	   -moz-transform: rotateX(0deg);
+	    -ms-transform: rotateX(0deg);
+	     -o-transform: rotateX(0deg);
+	        transform: rotateX(0deg);
 }
 .card .null {
 	background-color: #fff;
