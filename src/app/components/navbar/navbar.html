@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href ng-click="main.home=true"><span class="glyphicon glyphicon-home"></span></a>
-      <button class="btn btn-primary navbar-btn navbar-right" ng-click="main.newGame()">New game</button>
+      <button class="btn btn-primary navbar-btn" ng-click="main.newGame()">New game</button>
+      <p ng-hide="main.home" class="navbar-text navbar-right">Time: {{main.time | secondsToTime | date:'HH:mm:ss'}}</p>
     </div>
   </div>
 </nav>
