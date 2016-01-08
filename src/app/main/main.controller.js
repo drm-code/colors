@@ -24,6 +24,7 @@
       vm.matched = 0;
       vm.time = 0;
       toastr.clear();
+      if (angular.isDefined(vm.gameTime)) {$interval.cancel(vm.gameTime);}
       vm.gameTime = gameTime();
     }
 
