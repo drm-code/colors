@@ -56,6 +56,14 @@
 	     -o-transform: rotateY(0deg);
 	        transform: rotateY(0deg);
 }
+.card .null {
+	background-color: #fff;
+	border: 10px double #787878;
+	padding-top: 40px;
+}
+.card .null span {
+	font-size: 20px;
+}
 .glyphicon-star-empty {
 	color: #787878;
 	font-size: 65px;
