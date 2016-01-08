@@ -13,6 +13,7 @@
     vm.newGame = newGame;
     vm.flip = flip;
     vm.home = true;
+    vm.bestTime = 0;
     toastrConfig.timeOut = 2000;
     toastrConfig.preventDuplicates = false;
     toastrConfig.progressBar = false;    
@@ -47,6 +48,9 @@
               if (vm.matched == game.pairs()) {
                 toasts.push(toastr.info("You won \\o/ and your time was: " + $filter('date')($filter('secondsToTime')(vm.time),'HH:mm:ss'), "Congratulations", {timeOut: 0}));
                 $interval.cancel(vm.gameTime);
+                if (vm.bestTime == 0 || vm.time < vm.bestTime) {
+                  vm.bestTime = vm.time;
+                }
               }
             }
           } else {            
