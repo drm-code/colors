@@ -8,11 +8,10 @@
     <div class="col-xs-1"></div>
     <div ng-repeat="card in row" class="col-xs-2">
       <div class="card-container">
-        <div ng-if="card.color!==undefined" class="card" ng-class="{flipped: card.flipped}" ng-click="main.flip(card)">
-          <div class="front" style="background-color:{{card.color}}"></div>        
-          <div class="back text-center">
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
+        <div class="card" ng-class="{flipped: card.flipped}" ng-click="main.flip(card)">
+          <div ng-if="card.color!==undefined" class="front" style="background-color:{{card.color}}"></div>
+          <div ng-if="card.color===undefined" class="front null text-center"><span class="label label-default">Null Card</span></div>
+          <div class="back text-center"><span class="glyphicon glyphicon-star-empty"></span></div>
         </div>
       </div>
     </div>
