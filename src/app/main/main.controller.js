@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, toastr, toastrConfig, game) {    
+  function MainController($timeout, $interval, $filter, toastr, toastrConfig, game) {    
     var vm = this;
     var toasts = [];
 
@@ -22,7 +22,9 @@
       vm.home = false;
       vm.firstCard = vm.secondCard = undefined;
       vm.matched = 0;
+      vm.time = 0;
       toastr.clear();
+      vm.gameTime = gameTime();
     }
 
     function flip(card) {
@@ -37,12 +39,13 @@
               if (vm.firstCard.color === vm.secondCard.color) {
                 toasts.push(toastr.success("Good one :)", "Color Match"));
                 vm.firstCard = vm.secondCard = undefined;
-                vm.matched++;
+                vm.matched++;                
               } else {
                 toasts.push(toastr.error("Try again :(", "Color don't match"));
               }              
               if (vm.matched == game.pairs()) {
-                toasts.push(toastr.info("You won \\o/ press New game button", "Congratulations", {timeOut: 0}));
+                toasts.push(toastr.info("You won \\o/ and your time was: " + $filter('date')($filter('secondsToTime')(vm.time),'HH:mm:ss'), "Congratulations", {timeOut: 0}));
+                $interval.cancel(vm.gameTime);
               }
             }
           } else {            
@@ -53,6 +56,12 @@
           }
         }
       }
+    }
+
+    function gameTime() {
+      return $interval(function() {
+        return vm.time++;
+      }, 1000, 0);
     }
   }
 })();
